@@ -1,0 +1,194 @@
+---
+import { Button } from "@/components/ui/button";
+---
+<nav
+  role="navigation"
+  data-navbar
+  class="fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-out">
+  <div class="mx-auto max-w-7xl px-4">
+    <div
+      class="flex h-16 items-center justify-between gap-6 data-[scrolled=true]:h-16"
+      data-inner
+    >
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 relative z-20">
+        <!-- <img src="/" alt="Andina logo" class="" /> -->
+        <span class="font-semibold text-white transition-colors duration-300">Andina Group E.I.R.L.</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden items-center gap-8 md:flex text-white">
+        <a href="/" class="relative group hover:text-red-600 transition-colors duration-300">
+          <span>Inicio</span>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></div>
+        </a>
+        <a href="/nosotros" class="relative group hover:text-red-600 transition-colors duration-300">
+          <span>Nosotros</span>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></div>
+        </a>
+        <a href="/servicios" class="relative group hover:text-red-600 transition-colors duration-300">
+          <span>Servicios</span>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></div>
+        </a>
+        <a href="/contacto" class="relative group hover:text-red-600 transition-colors duration-300">
+          <span>Contacto</span>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></div>
+        </a>
+      </div>
+
+      <!-- Desktop CTA Button -->
+      <div class="hidden md:block">
+        <Button className="bg-red-600 hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+          <a href="/contacto">Solicitar Servicio</a>
+        </Button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        data-mobile-menu-toggle
+        class="relative z-20 md:hidden p-2 text-white hover:text-red-600 transition-colors duration-300"
+        aria-label="Abrir menú"
+      >
+        <div class="hamburger-icon w-6 h-6 flex flex-col justify-center items-center">
+          <span class="hamburger-line block w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out"></span>
+          <span class="hamburger-line block w-6 h-0.5 bg-current mt-1.5 transform transition-all duration-300 ease-in-out"></span>
+          <span class="hamburger-line block w-6 h-0.5 bg-current mt-1.5 transform transition-all duration-300 ease-in-out"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div
+    data-mobile-menu
+    class="fixed inset-0 z-10 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+  >
+    <div class="absolute inset-0 bg-neutral-900/95 backdrop-blur-md"></div>
+    <div class="relative flex flex-col h-full justify-center items-center text-center">
+      <div class="space-y-8">
+        <a 
+          href="/" 
+          class="block text-2xl font-medium text-white hover:text-red-600 transition-all duration-300 transform hover:scale-110"
+          data-mobile-link
+        >
+          Inicio
+        </a>
+        <a 
+          href="/nosotros" 
+          class="block text-2xl font-medium text-white hover:text-red-600 transition-all duration-300 transform hover:scale-110"
+          data-mobile-link
+        >
+          Nosotros
+        </a>
+        <a 
+          href="/servicios" 
+          class="block text-2xl font-medium text-white hover:text-red-600 transition-all duration-300 transform hover:scale-110"
+          data-mobile-link
+        >
+          Servicios
+        </a>
+        <a 
+          href="/contacto" 
+          class="block text-2xl font-medium text-white hover:text-red-600 transition-all duration-300 transform hover:scale-110"
+          data-mobile-link
+        >
+          Contacto
+        </a>
+        <div class="pt-4">
+          <Button className="bg-red-600 hover:bg-red-700 transition-all duration-300 transform hover:scale-105 text-lg px-8 py-3">
+            <a href="/contacto">Solicitar Servicio</a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  const nav = document.querySelector('nav[data-navbar]')
+  const mobileMenuToggle = document.querySelector('[data-mobile-menu-toggle]')
+  const mobileMenu = document.querySelector('[data-mobile-menu]')
+  const mobileLinks = document.querySelectorAll('[data-mobile-link]')
+  const hamburgerLines = document.querySelectorAll('.hamburger-line')
+  
+  let isMenuOpen = false
+
+  const setState = () => {
+    const scrolled = window.scrollY > 10
+    if (!nav) return
+    nav.dataset.scrolled = String(scrolled)
+    if (scrolled) {
+      nav.classList.add('bg-neutral-800/90', 'backdrop-blur', 'shadow-sm')
+    } else {
+      nav.classList.remove('bg-neutral-800/90', 'backdrop-blur', 'shadow-sm')
+    }
+  }
+
+  const toggleMobileMenu = () => {
+    isMenuOpen = !isMenuOpen
+    
+    if (isMenuOpen) {
+      mobileMenu.classList.remove('translate-x-full')
+      mobileMenu.classList.add('translate-x-0')
+      document.body.style.overflow = 'hidden'
+      
+      hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)'
+      hamburgerLines[1].style.opacity = '0'
+      hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)'
+      
+      mobileLinks.forEach((link, index) => {
+        link.style.opacity = '0'
+        link.style.transform = 'translateY(20px)'
+        setTimeout(() => {
+          link.style.opacity = '1'
+          link.style.transform = 'translateY(0)'
+        }, index * 100 + 100)
+      })
+    } else {
+      mobileMenu.classList.remove('translate-x-0')
+      mobileMenu.classList.add('translate-x-full')
+      document.body.style.overflow = ''
+      
+      hamburgerLines[0].style.transform = 'rotate(0) translate(0, 0)'
+      hamburgerLines[1].style.opacity = '1'
+      hamburgerLines[2].style.transform = 'rotate(0) translate(0, 0)'
+    }
+  }
+
+  const closeMobileMenu = () => {
+    if (isMenuOpen) {
+      toggleMobileMenu()
+    }
+  }
+
+  setState()
+  window.addEventListener('scroll', setState, { passive: true })
+  
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu)
+  }
+  
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu)
+  })
+
+  if (mobileMenu) {
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu || e.target.classList.contains('bg-neutral-900/95')) {
+        closeMobileMenu()
+      }
+    })
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMenuOpen) {
+      closeMobileMenu()
+    }
+  })
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && isMenuOpen) {
+      closeMobileMenu()
+    }
+  })
+</script>
