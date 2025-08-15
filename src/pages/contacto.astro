@@ -1,9 +1,77 @@
 ---
-import Layout from '../layouts/main.astro';
-const content = { title: 'Contacto' };
+import Layout from "../layouts/main.astro";
+import { Mail, MapPin, Phone } from "lucide-react";
+import ContactForm from "@/components/ContactForm.tsx";
+import FAQ from "@/components/FAQ.astro";
+const content = { title: "Contacto" };
 ---
+
 <Layout content={content}>
-  <div>
-    Contacto
+  <div
+    class="relative w-full h-[40vh] md:h-[70vh] flex items-center justify-center overflow-hidden"
+  >
+    <img
+      src="https://images.unsplash.com/photo-1511649475669-e288648b2339?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Fondo sobre nosotros"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="height: 70vh;"
+    />
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute left-0 md:left-60 bottom-10 z-10 p-8 md:p-12">
+      <h1
+        class="text-white text-5xl md:text-[80px] font-bold text-left drop-shadow-lg"
+      >
+        Contáctanos
+      </h1>
+    </div>
   </div>
+  <section
+    class="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-20 items-center"
+  >
+    <div>
+      <h2
+        class="text-5xl md:text-7xl font-bold text-center md:text-left text-gray-900 tracking-tight"
+      >
+        Información <br /> de contacto
+      </h2>
+      <p
+        class="mt-8 text-lg md:text-xl text-gray-600 max-w-2xl text-center md:text-left"
+      >
+        Si tienes alguna pregunta o necesitas asistencia, no dudes en
+        contactarnos. Estamos aquí para ayudarte.
+      </p>
+      <div class="flex flex-col gap-4 mt-8">
+        <div class="flex items-center gap-2">
+          <Phone className="w-6 h-6 text-primary" />
+          <span class="text-gray-600">+51 909 200 200</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Mail className="w-6 h-6 text-primary" />
+          <span class="text-gray-600">contacto@andinagroup.com</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <MapPin className="w-6 h-6 text-primary" />
+          <span class="text-gray-600">Av. 28 de Julio 1234, Huancayo, Perú</span>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <img
+        src="https://images.unsplash.com/photo-1653820453399-c0277eae725f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Sala moderna luminosa"
+        class="w-full h-[360px] md:h-[520px] object-cover rounded-3xl shadow-2xl"
+      />
+    </div>
+  </section>
+  <section
+    class=" px-6 md:px-8 py-16 mb-16"
+  >
+    <h2 class="text-5xl md:text-7xl font-bold text-center pb-10 text-gray-900 tracking-tight">
+      Deja un mensaje
+    </h2>
+    <div class="bg-[#3b3b3b]/10 rounded-3xl max-w-3xl mx-auto">
+      <ContactForm client:load />
+    </div>
+  </section>
+  <FAQ />
 </Layout>

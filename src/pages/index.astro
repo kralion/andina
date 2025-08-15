@@ -11,8 +11,19 @@ const content = { title: "Inicio" };
 
 <Layout content={content}>
 	<HeroSection />
+	<div class="pt-16 px-4">
+		<span class="text-primary text-center block mb-4 font-bold text-sm"
+			>Nuestros servicios</span
+		>
+		<h2 class="text-5xl md:text-[70px] font-bold text-center">
+			Servicios que ofrecemos <br />
+			<span class="text-primary">a tu medida</span>
+		</h2>
+	</div>
 	<ServicesCard />
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-20 max-w-7xl mx-auto min-h-[80%] md:min-h-[80%] items-center">
+	<div
+		class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-20 max-w-7xl mx-auto min-h-[80%] md:min-h-[80%] items-center"
+	>
 		<div class="w-full p-4 md:p-0 h-full flex items-center">
 			<img
 				src="https://plus.unsplash.com/premium_photo-1682597000871-82c0ab1298ae?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -39,7 +50,9 @@ const content = { title: "Inicio" };
 				y acabados generales. Nos enfocamos en brindar resultados funcionales, duraderos
 				y con excelente presentación.
 			</p>
-			<Button className="mt-6 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary w-fit">
+			<Button
+				className="mt-6 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary w-fit"
+			>
 				Lea más sobre nosotros
 				<MoveRight className="w-4 h-4" />
 			</Button>
@@ -54,5 +67,4 @@ const content = { title: "Inicio" };
 	>
 	</div>
 	<TestimonyCard />
-	<CTA />
 </Layout>

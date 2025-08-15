@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import CTA from '@/components/CTA.astro';
 const { content } = Astro.props;
 ---
 
@@ -17,6 +18,7 @@ const { content } = Astro.props;
 		<main>
 			<slot />
 		</main>
+		<CTA />
 		<Footer />
 	</body>
 </html>

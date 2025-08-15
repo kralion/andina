@@ -1,0 +1,56 @@
+---
+import { MoveRight } from "lucide-react";
+
+const faqs = [
+  {
+    pregunta: "¿Qué servicios ofrece Andina Group E.I.R.L.?",
+    respuesta:
+      "Ofrecemos soluciones integrales en carpintería, melamina, aluminio, cerrajería, vidriería, pintura, drywall, estructuras metálicas y acabados generales para hogares, negocios y proyectos comerciales.",
+  },
+  {
+    pregunta: "¿Cómo puedo solicitar una cotización?",
+    respuesta:
+      "Puede solicitar una cotización a través de nuestro formulario de contacto, llamando al +51 909 200 200 o visitando nuestra oficina en Av. 28 de Julio 1234, Huancayo, Perú.",
+  },
+  {
+    pregunta: "¿Trabajan con materiales de calidad?",
+    respuesta:
+      "Sí, utilizamos materiales de primera calidad y contamos con un equipo técnico altamente capacitado para garantizar resultados duraderos y de excelente presentación.",
+  },
+  {
+    pregunta: "¿Realizan trabajos fuera de Huancayo?",
+    respuesta:
+      "Sí, evaluamos proyectos en otras ciudades previa coordinación. Contáctenos para analizar su requerimiento y disponibilidad.",
+  },
+  {
+    pregunta: "¿Ofrecen garantía en sus trabajos?",
+    respuesta:
+      "Sí, todos nuestros trabajos cuentan con garantía. Nos comprometemos con la satisfacción y tranquilidad de nuestros clientes.",
+  },
+];
+---
+
+<section class="max-w-4xl mx-auto py-20 px-4">
+  <span class="text-primary text-center block mb-4 font-bold text-sm">Preguntas frecuentes</span>
+  <h2 class="text-5xl md:text-[60px] font-bold text-center mb-10">
+    Las preguntas <br> <span class="text-primary">de nuestros clientes</span>
+  </h2>
+  <div class="space-y-6">
+    {faqs.map((faq, idx) => (
+      <>
+        <details class="group bg-white/90 rounded-xl p-6">
+          <summary class="flex items-center justify-between cursor-pointer text-lg font-semibold text-primary group-open:text-primary">
+            {faq.pregunta}
+            <MoveRight className="w-4 h-4" />
+          </summary>
+          <p class="mt-4 text-gray-700">
+            {faq.respuesta}
+          </p>
+        </details>
+        {idx < faqs.length - 1 && (
+          <hr class="my-4 border-gray-300" />
+        )}
+      </>
+    ))}
+  </div>
+</section>

@@ -17,28 +17,28 @@ import { Button } from "@/components/ui/button";
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden items-center gap-8 md:flex text-white">
-        <a href="/" class="relative group hover:text-red-600 transition-colors duration-300">
+      <div class="hidden items-center gap-8 md:flex text-white text-lg">
+        <a href="/" class="relative group hover:text-primary transition-colors duration-300">
           <span>Inicio</span>
-          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></div>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <a href="/nosotros" class="relative group hover:text-red-600 transition-colors duration-300">
+        <a href="/nosotros" class="relative group hover:text-primary transition-colors duration-300">
           <span>Nosotros</span>
-          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></div>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <a href="/servicios" class="relative group hover:text-red-600 transition-colors duration-300">
+        <a href="/servicios" class="relative group hover:text-primary transition-colors duration-300">
           <span>Servicios</span>
-          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></div>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <a href="/contacto" class="relative group hover:text-red-600 transition-colors duration-300">
+        <a href="/contacto" class="relative group hover:text-primary transition-colors duration-300">
           <span>Contacto</span>
-          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></div>
+          <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
         </a>
       </div>
 
       <!-- Desktop CTA Button -->
       <div class="hidden md:block">
-        <Button className="bg-red-600 hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+        <Button className="bg-primary hover:bg-white hover:text-primary cursor-pointer transition-all duration-300 transform hover:scale-105">
           <a href="/contacto">Solicitar Servicio</a>
         </Button>
       </div>
@@ -46,7 +46,7 @@ import { Button } from "@/components/ui/button";
       <!-- Mobile Menu Button -->
       <button
         data-mobile-menu-toggle
-        class="relative z-20 md:hidden p-2 text-white hover:text-red-600 transition-colors duration-300"
+        class="relative z-20 md:hidden p-2 text-white hover:text-primary transition-colors duration-300"
         aria-label="Abrir menú"
       >
         <div class="hamburger-icon w-6 h-6 flex flex-col justify-center items-center">
@@ -64,38 +64,38 @@ import { Button } from "@/components/ui/button";
     class="fixed inset-0 z-10 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
   >
     <div class="absolute inset-0 bg-neutral-900/95 backdrop-blur-md"></div>
-    <div class="relative flex flex-col h-full justify-center items-center text-center">
+    <div class="relative flex flex-col h-full justify-center items-center text-center text-lg">
       <div class="space-y-8">
         <a 
           href="/" 
-          class="block text-2xl font-medium text-white hover:text-red-600 transition-all duration-300 transform hover:scale-110"
+          class="block text-2xl font-medium text-white hover:text-primary transition-all duration-300 transform hover:scale-110"
           data-mobile-link
         >
           Inicio
         </a>
         <a 
           href="/nosotros" 
-          class="block text-2xl font-medium text-white hover:text-red-600 transition-all duration-300 transform hover:scale-110"
+          class="block text-2xl font-medium text-white hover:text-primary transition-all duration-300 transform hover:scale-110"
           data-mobile-link
         >
           Nosotros
         </a>
         <a 
           href="/servicios" 
-          class="block text-2xl font-medium text-white hover:text-red-600 transition-all duration-300 transform hover:scale-110"
+          class="block text-2xl font-medium text-white hover:text-primary transition-all duration-300 transform hover:scale-110"
           data-mobile-link
         >
           Servicios
         </a>
         <a 
           href="/contacto" 
-          class="block text-2xl font-medium text-white hover:text-red-600 transition-all duration-300 transform hover:scale-110"
+          class="block text-2xl font-medium text-white hover:text-primary transition-all duration-300 transform hover:scale-110"
           data-mobile-link
         >
           Contacto
         </a>
         <div class="pt-4">
-          <Button className="bg-red-600 hover:bg-red-700 transition-all duration-300 transform hover:scale-105 text-lg px-8 py-3">
+          <Button className="bg-primary hover:bg-white hover:text-primary cursor-pointer transition-all duration-300 transform hover:scale-105">
             <a href="/contacto">Solicitar Servicio</a>
           </Button>
         </div>
