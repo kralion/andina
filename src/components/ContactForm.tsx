@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+import { MoveRight } from "lucide-react";
+
 
 export default function ContactForm() {
   return (
@@ -25,8 +27,9 @@ export default function ContactForm() {
             </SelectContent>
           </Select>
           <Textarea rows={4} className="rounded-md bg-white/90 px-3 py-2 text-black h-28" placeholder="Detalles" />
-          <Button type="submit" className="mt-2 rounded-md bg-red-600 px-4 py-2 font-medium text-white hover:bg-red-700">
+          <Button type="submit" className="mt-2 rounded-md bg-primary px-4 py-2 font-medium text-white hover:bg-white hover:text-primary cursor-pointer mx-auto">
             Reserve una consulta gratuita
+            <MoveRight className="w-4 h-4" />
           </Button>
         </form>
       </div>

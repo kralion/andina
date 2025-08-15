@@ -1,4 +1,6 @@
 ---
+import { Button } from "@/components/ui/button";
+import { MoveRight } from "lucide-react";
 ---
 
 <footer class="relative mt-24 border-t border-border/60 bg-[oklch(0.98_0_0)] text-foreground">
@@ -10,7 +12,12 @@
 					<p class="text-sm/6 uppercase tracking-widest text-white/60">¿Listo para empezar?</p>
 					<h3 class="mt-1 text-2xl font-semibold">Construyamos algo increíble juntos</h3>
 				</div>
-				<a href="/contacto" class="inline-flex items-center justify-center rounded-md bg-red-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-red-700">Solicitar servicio</a>
+				<Button className="bg-primary hover:bg-white hover:text-primary cursor-pointer flex items-center gap-2">
+					<a href="/contacto" class="flex items-center gap-2">
+						Solicitar servicio
+						<MoveRight className="w-4 h-4" />
+					</a>
+				</Button>
 			</div>
 		</div>
 	</div>
