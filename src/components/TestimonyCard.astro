@@ -1,0 +1,60 @@
+---
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Star } from "lucide-react";
+
+const testimonios = [
+  {
+    nombre: "Ana Rodriguez",
+    ubicacion: "Cliente de Huancayo, Perú",
+    mensaje:
+      "El servicio de vidriería fue excelente, el equipo fue muy profesional y el resultado final fue más que satisfactorio. Sin duda volveré a contratarlos para futuros proyectos.",
+    estrellas: 5,
+  },
+  {
+    nombre: "Luis Pérez",
+    ubicacion: "Cliente de Huancayo, Perú",
+    mensaje:
+      "Contraté el servicio de cerrajería, y drywall para una remodelación y quedé impresionado con la calidad y rapidez. El equipo trabajó de forma eficiente y siempre con actitud positiva.",
+    estrellas: 5,
+  },
+  {
+    nombre: "María Rodríguez",
+    ubicacion: "Cliente de Lima, Perú",
+    mensaje:
+      "Me encantó la pintura de mi oficina. Profesionales, puntuales y muy cuidadosos con los detalles. Transformaron mi espacio en algo moderno y acogedor.",
+    estrellas: 5,
+  },
+  {
+    nombre: "Carlos Sanchez",
+    ubicacion: "Cliente de Huancayo, Perú",
+    mensaje:
+      "El servicio de carpintería fue excelente, el equipo fue muy profesional y el resultado final fue más que satisfactorio. Sin duda volveré a contratarlos para futuros proyectos.",
+    estrellas: 5,
+  },
+];
+---
+
+<section class="py-20 max-w-7xl mx-auto p-4">
+  <span class="text-primary text-center block mb-4 font-bold text-sm">Con la confianza de nuestros clientes</span>
+  <h2 class="text-5xl md:text-[70px] font-bold text-center">A la gente le encanta <br> <span class="text-primary">Andina Group</span></h2>
+  <div class="flex flex-wrap justify-center items-center gap-8 py-16 max-w-7xl mx-auto">
+    {testimonios.map((testimonio) => (
+      <Card className="max-w-xl w-full shadow-xl rounded-2xl border-0 bg-white">
+        <CardHeader className="flex flex-col items-center gap-2 pb-0">
+          <CardTitle className="text-2xl font-bold text-primary text-center">{testimonio.nombre}</CardTitle>
+          <span class="text-gray-500 text-sm text-center">{testimonio.ubicacion}</span>
+        </CardHeader>
+        <CardContent className="pt-4">
+          <p class="text-lg text-gray-700 italic text-center">
+            “{testimonio.mensaje}”
+          </p>
+          <div class="flex justify-center mt-4">
+            {[...Array(testimonio.estrellas)].map(() => (
+              <Star className="w-6 h-6 text-yellow-400" />
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</section>
