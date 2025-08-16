@@ -27,10 +27,12 @@ const services = [
           </div>
           <div class="p-6">
             <p class="text-gray-600">{service.description}</p>
-            <Button className="mt-4 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary">
-              Más información
-              <MoveRight className="w-4 h-4" />
-            </Button>
+            <a href="/servicios" class="contents">
+              <Button className="mt-4 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary">
+                Más información
+                <MoveRight className="w-4 h-4" />
+              </Button>
+            </a>
           </div>
         </div>
       ))}
