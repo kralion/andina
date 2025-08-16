@@ -21,9 +21,12 @@ export default function ContactForm() {
               <SelectValue placeholder="Seleccione un tema" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="remodelacion">Remodelación</SelectItem>
-              <SelectItem value="mantenimiento">Mantenimiento</SelectItem>
-              <SelectItem value="otro">Otro</SelectItem>
+              <SelectItem value="Carpintería">Carpintería</SelectItem>
+              <SelectItem value="Cerrajería">Cerrajería</SelectItem>
+              <SelectItem value="Drywall">Drywall</SelectItem>
+              <SelectItem value="Pintura">Pintura</SelectItem>
+              <SelectItem value="Vidriería">Vidriería</SelectItem>
+              <SelectItem value="Otro">Otro</SelectItem>
             </SelectContent>
           </Select>
           <Textarea rows={4} className="rounded-md bg-white/90 px-3 py-2 text-black h-28" placeholder="Detalles" />

@@ -19,7 +19,15 @@ const content = { title: "Inicio" };
 			<span class="text-primary">a tu medida</span>
 		</h2>
 	</div>
-	<ServicesCard />
+	<ServicesCard limit={3} />
+	<div class="flex justify-center  mb-16" data-aos="fade-up">
+		<a href="/servicios" class="contents">
+			<Button className="bg-primary hover:bg-white hover:text-primary cursor-pointer transition-all duration-300 transform hover:scale-105 border hover:border-primary">
+				Ver todos los servicios
+				<MoveRight className="w-4 h-4" />
+			</Button>
+		</a>
+	</div>
 	<div
 		class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-20 max-w-7xl mx-auto min-h-[80%] md:min-h-[80%] items-center"
 	>

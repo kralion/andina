@@ -1,6 +1,6 @@
 ---
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
+import { X, Home, Users, Settings, Mail } from "lucide-react";
 ---
 <nav
   role="navigation"
@@ -18,20 +18,24 @@ import { X } from "lucide-react";
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden items-center gap-8 md:flex text-white text-lg">
-        <a href="/" class="relative group hover:text-primary transition-colors duration-300">
+      <div class="hidden items-center gap-8 md:flex text-white">
+        <a href="/" class="relative group hover:text-primary transition-colors duration-300 flex items-center gap-2">
+          <Home className="w-4 h-4 transition-transform duration-500 group-hover:rotate-[360deg]" />
           <span>Inicio</span>
           <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <a href="/nosotros" class="relative group hover:text-primary transition-colors duration-300">
+        <a href="/nosotros" class="relative group hover:text-primary transition-colors duration-300 flex items-center gap-2">
+          <Users className="w-4 h-4 transition-transform duration-500 group-hover:rotate-[360deg]" />
           <span>Nosotros</span>
           <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <a href="/servicios" class="relative group hover:text-primary transition-colors duration-300">
+        <a href="/servicios" class="relative group hover:text-primary transition-colors duration-300 flex items-center gap-2">
+          <Settings className="w-4 h-4 transition-transform duration-500 group-hover:rotate-[360deg]" />
           <span>Servicios</span>
           <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
         </a>
-        <a href="/contacto" class="relative group hover:text-primary transition-colors duration-300">
+        <a href="/contacto" class="relative group hover:text-primary transition-colors duration-300 flex items-center gap-2">
+          <Mail className="w-4 h-4 transition-transform duration-500 group-hover:rotate-[360deg]" />
           <span>Contacto</span>
           <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></div>
         </a>
@@ -39,7 +43,8 @@ import { X } from "lucide-react";
 
       <!-- Desktop CTA Button -->
       <div class="hidden md:block">
-        <Button className="bg-primary hover:bg-white hover:text-primary cursor-pointer transition-all duration-300 transform hover:scale-105">
+        <Button className="bg-primary hover:bg-white hover:text-primary cursor-pointer transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+          <Mail className="w-4 h-4" />
           <a href="/contacto">Solicitar Servicio</a>
         </Button>
       </div>
@@ -68,33 +73,38 @@ import { X } from "lucide-react";
     <div class="p-4 space-y-2">
       <a 
         href="/" 
-        class="block rounded-lg px-4 py-3 text-lg font-medium text-gray-900 hover:bg-gray-100"
+        class="flex items-center gap-3 rounded-lg px-4 py-3 text-lg font-medium text-gray-900 hover:bg-gray-100"
         data-mobile-link
       >
+        <Home className="w-5 h-5" />
         Inicio
       </a>
       <a 
         href="/nosotros" 
-        class="block rounded-lg px-4 py-3 text-lg font-medium text-gray-900 hover:bg-gray-100"
+        class="flex items-center gap-3 rounded-lg px-4 py-3 text-lg font-medium text-gray-900 hover:bg-gray-100"
         data-mobile-link
       >
+        <Users className="w-5 h-5" />
         Nosotros
       </a>
       <a 
         href="/servicios" 
-        class="block rounded-lg px-4 py-3 text-lg font-medium text-gray-900 hover:bg-gray-100"
+        class="flex items-center gap-3 rounded-lg px-4 py-3 text-lg font-medium text-gray-900 hover:bg-gray-100"
         data-mobile-link
       >
+        <Settings className="w-5 h-5" />
         Servicios
       </a>
       <a 
         href="/contacto" 
-        class="block rounded-lg px-4 py-3 text-lg font-medium text-gray-900 hover:bg-gray-100"
+        class="flex items-center gap-3 rounded-lg px-4 py-3 text-lg font-medium text-gray-900 hover:bg-gray-100"
         data-mobile-link
       >
+        <Mail className="w-5 h-5" /> 
         Contacto
       </a>
-      <Button className="bg-primary hover:bg-white hover:text-primary cursor-pointer transition-all duration-300 transform hover:scale-105 w-full">
+      <Button className="bg-primary hover:bg-white hover:text-primary cursor-pointer transition-all duration-300 transform hover:scale-105 w-full flex items-center gap-2">
+        <Mail className="w-4 h-4" />
         <a href="/contacto">Solicitar Servicio</a>
       </Button>
   </div>

@@ -2,37 +2,86 @@
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 
+interface Props {
+  limit?: number;
+}
+const { limit } = Astro.props;
+
 const services = [
   {
     title: "Estructuras metálicas",
+    slug: "estructuras-metalicas",
     description: "Disponemos de opciones como techos curvos, a dos y una agua, y con aislamiento térmico. Trabajamos con materiales de alta calidad como Aluving TRU, TR3, garantizando durabilidad y eficiencia.",
     image: "https://images.unsplash.com/photo-1707226846619-b2a8bca33671?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Puertas y Portones",
+    slug: "puertas-y-portones",
+    description: "Fabricamos e instalamos puertas enrollables, puertas de aluminio, portones, así como puertas contraplacadas, contra incendios, imitación madera y diseño Inox. Todas nuestras soluciones se adaptan a tus necesidades, garantizando seguridad, estética y resistencia en cada proyecto.",
+    image: "https://i.ibb.co/Kz3Y4bP1/puerta.jpg",
+  },
+  {
+    title: "Escaleras",
+    slug: "escaleras",
+    description: "Instalamos escaleras rectas, curvas, mixtas, interiores y exteriores, en materiales como acero y opciones helicoidales o flotantes, adaptadas a tus necesidades y espacios.",
+    image: "https://aceroscrea.com/wp-content/uploads/2023/07/escaleras-modernas-de-herreria-con-escalones-de-lamina-antiderrapante-en-exterior-de-casa.jpg",
+  },
+  {
+    title: "Drywall",
+    slug: "drywall",
+    description: "Ofrecemos soluciones de Drywall para divisiones, paredes y techos, con materiales de alta calidad y acabados profesionales, garantizando durabilidad y resistencia.",
+    image: "https://images.unsplash.com/photo-1628901551715-7234d14fb7a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Pasamanos",
+    slug: "pasamanos",
+    description: "Contamos con pasamanos modernos e industriales, perfectos para proporcionar seguridad y estilo. Ideales para proyectos residenciales y comerciales.",
+    image: "https://plus.unsplash.com/premium_photo-1670155510503-1e48b784e696?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Vidriería",
+    slug: "vidrieria",
+    description: "Proveemos servicios de vidriería, instalamos ventanas, puertas y muros de vidrio, con materiales de alta calidad y acabados profesionales, garantizando durabilidad y resistencia.",
+    image: "https://cosmosglasssolution.com/Blog/wp-content/uploads/2018/11/vidrieria-elementos-mamparas-1024x464.jpg",
+  },
+  {
+    title: "Melamine",
+    slug: "melamine",
+    description: "Proveemos productos de melamine de alta calidad, perfectos para muebles y acabados. Ofrecemos variedad de colores y texturas, ideales para proyectos de carpintería moderna y diseño interior.",
+    image: "https://miroytengo.es/blog/wp-content/uploads/2018/06/miroytengo-que-es-melamina-muebles-1.jpg",
+  },
+  {
+    title: "Mamparas de Aluminio",
+    slug: "mamparas-de-aluminio",
+    description: "Fabricamos y instalamos mamparas de aluminio, con acabados modernos y diseño personalizado. Adaptadas a tus necesidades, garantizando durabilidad y resistencia en cada proyecto.",
+    image: "https://arqvidriosleal.com/wp-content/uploads/2018/10/Mampara-_aluminio1.jpg",
   },
 ];
 
 ---
 
-<section class="bg-white py-12 max-w-7xl mx-auto" data-aos="fade-up">
+<section class="bg-white max-w-7xl mx-auto" data-aos="fade-up">
   <div class="container mx-auto px-4 py-12">
-    
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {services.map((service) => (
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      {(limit ? services.slice(0, limit) : services).map((service) => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
           <div class="relative">
             <img src={service.image} alt={service.title} class="w-full h-48 object-cover" />
             <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div>
             <div class="absolute bottom-4 left-4 right-4">
-              <h3 class="text-3xl font-semibold text-black drop-shadow-sm">{service.title}</h3>
+              <h3 class="text-3xl font-light text-gray-700 drop-shadow-sm">{service.title}</h3>
             </div>
           </div>
-          <div class="p-6">
-            <p class="text-gray-600">{service.description}</p>
-            <a href="/servicios" class="contents">
-              <Button className="mt-4 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary">
-                Más información
-                <MoveRight className="w-4 h-4" />
-              </Button>
-            </a>
+          <div class="flex flex-col flex-1 p-6">
+            <p class="text-gray-600 mb-6">{service.description}</p>
+            <div class="mt-auto">
+              <a href={`/servicios/${service.slug}`} class="contents">
+                <Button className="w-fit mt-2 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary">
+                  Más información
+                  <MoveRight className="w-4 h-4" />
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       ))}

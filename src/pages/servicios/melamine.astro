@@ -1,0 +1,71 @@
+---
+import Layout from "../../layouts/main.astro";
+import { Button } from "@/components/ui/button";
+import { MoveRight, CheckCircle, Clock, Shield, Star } from "lucide-react";
+const content = { title: "Melamine - Andina Group E.I.R.L." };
+---
+
+<Layout content={content}>
+  <!-- Hero Section -->
+  <div
+    class="relative w-full h-[40vh] md:h-[70vh] flex items-center justify-center overflow-hidden"
+  >
+    <img
+      src="https://miroytengo.es/blog/wp-content/uploads/2018/06/miroytengo-que-es-melamina-muebles-1.jpg"
+      alt="Melamine"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="height: 70vh;"
+    />
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute left-0 md:left-60 bottom-10 z-10 p-8 md:p-12">
+      <h1
+        class="text-white text-5xl md:text-[80px] font-bold text-left drop-shadow-lg"
+        data-aos="fade-up"
+      >
+        Melamine
+      </h1>
+    </div>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+    <div class="py-10 md:py-20">
+      <h2 class="text-2xl md:text-4xl font-extralight">
+        ¿Por qué elegir melamine?
+      </h2>
+      <p class="text-base md:text-[20px] font-extralight py-4 md:py-5">
+        El melamine es un material de construcción versátil y económico, ideal para divisiones, paredes y techos. Con acabados profesionales y materiales de alta calidad, garantiza durabilidad y resistencia en cualquier proyecto.
+      </p>
+      <ul class="list-disc pl-4 md:pl-6 text-base md:text-lg font-extralight text-gray-700 space-y-2">
+        <li>
+          Materiales de alta calidad como acero, aluminio y madera, garantizando resistencia y durabilidad.
+        </li>
+        <li>
+          Amplia variedad de diseños: rectas, curvas, helicoidales, interiores y exteriores, adaptadas a cada espacio.
+        </li>
+        <li>
+          Acabados modernos y personalizados según las necesidades estéticas y funcionales del cliente.
+        </li>
+        <li>
+          Soluciones a medida para proyectos nuevos, remodelaciones o ampliaciones.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-2xl md:text-4xl font-extralight">¿Qué incluye este servicio?</h2>
+      <p class="text-base md:text-[20px] font-extralight py-4 md:py-5">
+        Nuestro servicio incluye asesoría personalizada, fabricación a medida e instalación profesional, asegurando que cada melamine cumpla con los más altos estándares de calidad y seguridad. Nos encargamos de todo el proceso, desde el diseño hasta la entrega final, para que tu proyecto sea un éxito.
+      </p>
+      <p class="text-base md:text-[20px] font-extralight py-4 md:py-5">
+        Tenemos una amplia gama de opciones en melamine, desde las más tradicionales hasta las más modernas, con materiales de alta calidad y acabados profesionales.
+      </p>
+    </div>
+    <div class="py-10 md:py-20">
+      <h2 class="text-2xl md:text-4xl font-extralight pb-6 md:pb-10">Algunos de nuestros trabajos:</h2>
+      <img
+        src="https://miroytengo.es/blog/wp-content/uploads/2018/06/miroytengo-que-es-melamina-muebles-1.jpg"
+        alt="Melamine"
+        class="w-full max-w-full md:max-w-3xl mx-auto object-cover object-center rounded-xl"
+      />
+    </div>
+  </section>
+</Layout>
