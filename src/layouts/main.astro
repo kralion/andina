@@ -11,6 +11,7 @@ const { content } = Astro.props;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 		<title>{content.title}</title>
 	</head>
 	<body class="min-h-screen bg-background text-foreground">
@@ -20,5 +21,15 @@ const { content } = Astro.props;
 		</main>
 		<CTA />
 		<Footer />
+		
+		<script>
+			import AOS from 'aos';
+			AOS.init({
+				duration: 500,
+				easing: 'ease-in-out',
+				once: true,
+				mirror: false
+			});
+		</script>
 	</body>
 </html>
