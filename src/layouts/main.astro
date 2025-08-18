@@ -4,15 +4,77 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import CTA from '@/components/CTA.astro';
 const { content } = Astro.props;
+
+// SEO defaults
+const siteName = 'Andina Group E.I.R.L.';
+const defaultDescription = 'Soluciones en carpintería, melamina, aluminio, vidriería, drywall, estructuras metálicas y acabados en Huancayo, Perú. Calidad, diseño y garantía.';
+const defaultImage = '/faviconAG.ico';
+
+const pageTitle = content?.title ? `${content.title} | ${siteName}` : siteName;
+const pageDescription = content?.description ?? defaultDescription;
+const pageType = content?.type ?? 'website';
+const pageImage = content?.image ?? defaultImage;
+const robots = content?.noindex ? 'noindex, nofollow' : 'index, follow';
+
+// Canonical & URLs
+const canonical = content?.canonical ?? (Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined);
+const siteOrigin = Astro.site?.origin;
+
+// JSON-LD: Organization
+const organizationLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	name: siteName,
+	...(siteOrigin ? { url: siteOrigin } : {}),
+	...(siteOrigin ? { logo: new URL('/faviconAG.ico', Astro.site).toString() } : {}),
+	contactPoint: [
+		{
+			'@type': 'ContactPoint',
+			telephone: '+51 922 355 411',
+			contactType: 'customer service',
+			areaServed: 'PE',
+			availableLanguage: ['es']
+		}
+	]
+};
 ---
 
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/faviconAG.ico" />
 		<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-		<title>{content.title}</title>
+		<link rel="manifest" href="/manifest.json" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={pageDescription} />
+		<meta name="robots" content={robots} />
+		{canonical && <link rel="canonical" href={canonical} />}
+
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:type" content={pageType} />
+		{canonical && <meta property="og:url" content={canonical} />}
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:image" content={pageImage} />
+		<meta property="og:image:alt" content={siteName} />
+		<meta property="og:locale" content={content?.ogLocale ?? 'es_PE'} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+		<meta name="twitter:image" content={pageImage} />
+
+		{canonical && <link rel="alternate" hreflang="es" href={canonical} />}
+		{canonical && <link rel="alternate" hreflang="x-default" href={canonical} />}
+
+		{siteOrigin && (
+			<script type="application/ld+json" set:html={JSON.stringify(organizationLd)} />
+		)}
+
+		{content?.jsonLd && (
+			<script type="application/ld+json" set:html={JSON.stringify(content.jsonLd)} />
+		)}
 	</head>
 	<body class="min-h-screen bg-background text-foreground">
 		<Navbar />

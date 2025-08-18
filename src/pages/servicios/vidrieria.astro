@@ -2,7 +2,21 @@
 import Layout from "../../layouts/main.astro";
 import { Button } from "@/components/ui/button";
 import { MoveRight, CheckCircle, Clock, Shield, Star } from "lucide-react";
-const content = { title: "Vidriería - Andina Group E.I.R.L." };
+const content = {
+	title: "Vidriería - Andina Group E.I.R.L.",
+	description:
+		"Soluciones de vidriería: ventanas, mamparas, barandas y divisiones de oficina con cristales templados y laminados.",
+	image: "https://cosmosglasssolution.com/Blog/wp-content/uploads/2018/11/vidrieria-elementos-mamparas-1024x464.jpg",
+	jsonLd: {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		name: "Vidriería",
+		description:
+			"Fabricación e instalación de soluciones en vidrio templado, laminado y de seguridad.",
+		areaServed: "Huancayo, Perú",
+		provider: { "@type": "Organization", name: "Andina Group E.I.R.L." }
+	}
+};
 ---
 
 <Layout content={content}>

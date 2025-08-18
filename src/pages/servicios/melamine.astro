@@ -2,7 +2,21 @@
 import Layout from "../../layouts/main.astro";
 import { Button } from "@/components/ui/button";
 import { MoveRight, CheckCircle, Clock, Shield, Star } from "lucide-react";
-const content = { title: "Melamine - Andina Group E.I.R.L." };
+const content = {
+	title: "Melamine - Andina Group E.I.R.L.",
+	description:
+		"Diseño y fabricación en melamine para cocinas, closets, oficinas y muebles a medida.",
+	image: "https://miroytengo.es/blog/wp-content/uploads/2018/06/miroytengo-que-es-melamina-muebles-1.jpg",
+	jsonLd: {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		name: "Muebles de Melamine",
+		description:
+			"Fabricación de muebles en melamine a medida para hogar y oficina.",
+		areaServed: "Huancayo, Perú",
+		provider: { "@type": "Organization", name: "Andina Group E.I.R.L." }
+	}
+};
 ---
 
 <Layout content={content}>

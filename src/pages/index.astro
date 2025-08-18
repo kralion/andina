@@ -5,7 +5,21 @@ import ServicesCard from "@/components/ServicesCard.astro";
 import TestimonyCard from "@/components/TestimonyCard.astro";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
-const content = { title: "Inicio" };
+const content = {
+	title: "Inicio",
+	description:
+		"Andina Group E.I.R.L. ofrece soluciones integrales en carpintería, melamina, aluminio, vidriería, drywall y estructuras metálicas en Huancayo, Perú.",
+	type: "website",
+	image: "/faviconAG.ico",
+	jsonLd: {
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		name: "Andina Group E.I.R.L.",
+		url: Astro.site ? Astro.site.origin : undefined,
+		description:
+			"Soluciones integrales en carpintería, melamina, aluminio, vidriería, drywall y estructuras metálicas en Huancayo, Perú."
+	}
+};
 ---
 
 <Layout content={content}>

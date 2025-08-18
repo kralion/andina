@@ -2,7 +2,21 @@
 import Layout from "../../layouts/main.astro";
 import { Button } from "@/components/ui/button";
 import { MoveRight, CheckCircle, Clock, Shield, Star } from "lucide-react";
-const content = { title: "Escaleras - Andina Group E.I.R.L." };
+const content = {
+	title: "Escaleras - Andina Group E.I.R.L.",
+	description:
+		"Diseño y fabricación de escaleras en acero, aluminio o madera: rectas, curvas y helicoidales para hogares y negocios.",
+	image: "https://aceroscrea.com/wp-content/uploads/2023/07/escaleras-modernas-de-herreria-con-escalones-de-lamina-antiderrapante-en-exterior-de-casa.jpg",
+	jsonLd: {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		name: "Fabricación de Escaleras",
+		description:
+			"Escaleras rectas, curvas, helicoidales y flotantes, en acero, aluminio o madera.",
+		areaServed: "Huancayo, Perú",
+		provider: { "@type": "Organization", name: "Andina Group E.I.R.L." }
+	}
+};
 ---
 
 <Layout content={content}>

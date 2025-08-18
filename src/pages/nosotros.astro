@@ -1,7 +1,20 @@
 ---
 import Layout from "../layouts/main.astro";
 import { Brain, Lightbulb, ShieldCheck } from "lucide-react";
-const content = { title: "Nosotros" };
+const content = {
+	title: "Nosotros",
+	description:
+		"Conoce a Andina Group E.I.R.L.: 15 años de experiencia en soluciones de construcción y acabados en Huancayo, Perú.",
+	image: "/faviconAG.ico",
+	jsonLd: {
+		"@context": "https://schema.org",
+		"@type": "AboutPage",
+		name: "Sobre Nosotros - Andina Group E.I.R.L.",
+		description:
+			"Empresa con más de 15 años brindando soluciones de construcción y acabados en Huancayo.",
+		url: Astro.site ? new URL('/nosotros', Astro.site).toString() : undefined
+	}
+};
 ---
 
 <Layout content={content}>

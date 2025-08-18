@@ -4,7 +4,21 @@ import Layout from "../layouts/main.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
-const content = { title: "Servicios" };
+const content = {
+	title: "Servicios",
+	description:
+		"Servicios profesionales de construcción: drywall, estructuras metálicas, mamparas de aluminio, vidriería, melamine, pasamanos, puertas y portones en Huancayo.",
+	image: "/faviconAG.ico",
+	type: "website",
+	jsonLd: {
+		"@context": "https://schema.org",
+		"@type": "CollectionPage",
+		name: "Servicios - Andina Group E.I.R.L.",
+		description:
+			"Portafolio de servicios: drywall, estructuras metálicas, mamparas de aluminio, vidriería, melamine, pasamanos, puertas y portones.",
+		url: Astro.site ? new URL('/servicios', Astro.site).toString() : undefined
+	}
+};
 ---
 
 <Layout content={content}>

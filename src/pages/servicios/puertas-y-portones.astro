@@ -2,7 +2,21 @@
 import Layout from "../../layouts/main.astro";
 import { Button } from "@/components/ui/button";
 import { MoveRight, CheckCircle, Clock, Shield, Star } from "lucide-react";
-const content = { title: "Puertas y Portones - Andina Group E.I.R.L." };
+const content = {
+	title: "Puertas y Portones - Andina Group E.I.R.L.",
+	description:
+		"Puertas y portones batientes, corredizos y automatizados. Fabricación en acero, fierro y aluminio.",
+	image: "https://i.ibb.co/Kz3Y4bP1/puerta.jpg",
+	jsonLd: {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		name: "Puertas y Portones",
+		description:
+			"Fabricación e instalación de puertas y portones a medida con opciones de automatización.",
+		areaServed: "Huancayo, Perú",
+		provider: { "@type": "Organization", name: "Andina Group E.I.R.L." }
+	}
+};
 ---
 
 <Layout content={content}>

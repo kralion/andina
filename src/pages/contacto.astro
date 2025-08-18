@@ -3,7 +3,20 @@ import Layout from "../layouts/main.astro";
 import { Mail, MapPin, Phone } from "lucide-react";
 import ContactForm from "@/components/ContactForm.tsx";
 import FAQ from "@/components/FAQ.astro";
-const content = { title: "Contacto" };
+const content = {
+	title: "Contacto",
+	description:
+		"Contáctanos para cotizaciones y asesoría en drywall, estructuras metálicas, melamine, vidriería y más en Huancayo.",
+	image: "/faviconAG.ico",
+	jsonLd: {
+		"@context": "https://schema.org",
+		"@type": "ContactPage",
+		name: "Contacto - Andina Group E.I.R.L.",
+		description:
+			"Página de contacto y solicitud de cotización.",
+		url: Astro.site ? new URL('/contacto', Astro.site).toString() : undefined
+	}
+};
 ---
 
 <Layout content={content}>
@@ -58,7 +71,7 @@ const content = { title: "Contacto" };
           data-aos-delay="300"
         >
           <Mail className="w-6 h-6 text-primary" />
-          <span class="text-gray-600">contacto@andinagroup.com</span>
+          <span class="text-gray-600">info@andinagroup.org</span>
         </div>
         <div
           class="flex items-center gap-2"

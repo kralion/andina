@@ -2,7 +2,21 @@
 import Layout from "../../layouts/main.astro";
 import { Button } from "@/components/ui/button";
 import { MoveRight, CheckCircle, Clock, Shield, Star } from "lucide-react";
-const content = { title: "Mamparas de Aluminio - Andina Group E.I.R.L." };
+const content = {
+	title: "Mamparas de Aluminio - Andina Group E.I.R.L.",
+	description:
+		"Fabricación e instalación de mamparas de aluminio: corredizas, batientes y fijas, con acabados de alta calidad.",
+	image: "https://arqvidriosleal.com/wp-content/uploads/2018/10/Mampara-_aluminio1.jpg",
+	jsonLd: {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		name: "Mamparas de Aluminio",
+		description:
+			"Mamparas de aluminio a medida para viviendas, oficinas y comercios.",
+		areaServed: "Huancayo, Perú",
+		provider: { "@type": "Organization", name: "Andina Group E.I.R.L." }
+	}
+};
 ---
 
 <Layout content={content}>
