@@ -9,51 +9,75 @@ const { limit } = Astro.props;
 
 const services = [
   {
-    title: "Estructuras metálicas",
-    slug: "estructuras-metalicas",
-    description: "Disponemos de opciones como techos curvos, a dos y una agua, y con aislamiento térmico. Trabajamos con materiales de alta calidad como Aluving TRU, TR3, garantizando durabilidad y eficiencia.",
-    image: "https://images.unsplash.com/photo-1707226846619-b2a8bca33671?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Carpintería",
+    slug: "carpinteria",
+    description: "Ofrecemos servicios de carpintería en madera, fabricando muebles a medida como closets, reposteros, puertas, escritorios y más. Nos enfocamos en la calidad, el diseño personalizado y la durabilidad, adaptándonos a las necesidades de cada cliente para crear espacios funcionales y estéticos.",
+    image: "https://images.unsplash.com/photo-1626081063434-79a2169791b1?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Puertas y Portones",
-    slug: "puertas-y-portones",
-    description: "Fabricamos e instalamos puertas enrollables, puertas de aluminio, portones, así como puertas contraplacadas, contra incendios, imitación madera y diseño Inox. Todas nuestras soluciones se adaptan a tus necesidades, garantizando seguridad, estética y resistencia en cada proyecto.",
-    image: "https://i.ibb.co/Kz3Y4bP1/puerta.jpg",
+    title: "Melamina",
+    slug: "melamina",
+    description: "Proveemos divisiones de melamina de alta calidad, ideales para separar ambientes en oficinas, hogares y comercios. Ofrecemos variedad de colores y texturas, adaptándonos a las necesidades de cada proyecto para lograr espacios funcionales y modernos.",
+    image: "https://miroytengo.es/blog/wp-content/uploads/2018/06/miroytengo-que-es-melamina-muebles-1.jpg",
   },
   {
-    title: "Escaleras",
-    slug: "escaleras",
-    description: "Instalamos escaleras rectas, curvas, mixtas, interiores y exteriores, en materiales como acero y opciones helicoidales o flotantes, adaptadas a tus necesidades y espacios.",
-    image: "https://aceroscrea.com/wp-content/uploads/2023/07/escaleras-modernas-de-herreria-con-escalones-de-lamina-antiderrapante-en-exterior-de-casa.jpg",
+    title: "Cerrajería",
+    slug: "cerrajeria",
+    description: "Ofrecemos servicios de cerrajería, instalación y cambio de cerraduras, soldadura de chapas, instalación de rejas, ventanas, puertas y más. Adaptándonos a las necesidades de cada cliente para crear espacios funcionales y estéticos.",
+    image: "https://images.unsplash.com/flagged/photo-1564767609213-c75ee685263a?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Vidriería",
+    slug: "vidrieria",
+    description: "Instalamos ventanas serie y proyectantes, así como vidrios templados y crudos, ofreciendo soluciones modernas y resistentes para todo tipo de ambientes.",
+    image: "https://cosmosglasssolution.com/Blog/wp-content/uploads/2018/11/vidrieria-elementos-mamparas-1024x464.jpg",
   },
   {
     title: "Drywall",
     slug: "drywall",
     description: "Ofrecemos soluciones de Drywall para divisiones, paredes y techos, con materiales de alta calidad y acabados profesionales, garantizando durabilidad y resistencia.",
-    image: "https://images.unsplash.com/photo-1628901551715-7234d14fb7a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://st2.depositphotos.com/1723345/10224/i/450/depositphotos_102243078-stock-photo-plasterboard-walls-gypsum-wall-under.jpg",
   },
   {
-    title: "Pasamanos",
-    slug: "pasamanos",
-    description: "Contamos con pasamanos modernos e industriales, perfectos para proporcionar seguridad y estilo. Ideales para proyectos residenciales y comerciales.",
-    image: "https://plus.unsplash.com/premium_photo-1670155510503-1e48b784e696?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  title: "Puertas y Portones",
+    slug: "puertas-y-portones",
+    description: "Fabricamos e instalamos puertas y portones: enrollables, enrollables con motor, automáticas, seccionales, diseño con inox e imitación madera. Todas nuestras soluciones se adaptan a tus necesidades, garantizando seguridad, estética y resistencia en cada proyecto.",
+    image: "https://i.ibb.co/Kz3Y4bP1/puerta.jpg",
   },
   {
-    title: "Vidriería",
-    slug: "vidrieria",
-    description: "Proveemos servicios de vidriería, instalamos ventanas, puertas y muros de vidrio, con materiales de alta calidad y acabados profesionales, garantizando durabilidad y resistencia.",
-    image: "https://cosmosglasssolution.com/Blog/wp-content/uploads/2018/11/vidrieria-elementos-mamparas-1024x464.jpg",
+    title: "Decoración en Wall Panel",
+    slug: "wall-panel",
+    description: "Ofrecemos soluciones de Wall Panel para divisiones, paredes y techos, con materiales de alta calidad y acabados profesionales, garantizando durabilidad y resistencia.",
+    image: "https://images.unsplash.com/photo-1701422055922-0df2da90946d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Melamine",
-    slug: "melamine",
-    description: "Proveemos productos de melamine de alta calidad, perfectos para muebles y acabados. Ofrecemos variedad de colores y texturas, ideales para proyectos de carpintería moderna y diseño interior.",
-    image: "https://miroytengo.es/blog/wp-content/uploads/2018/06/miroytengo-que-es-melamina-muebles-1.jpg",
+    title: "Pintura General",
+    slug: "pintura-general",
+    description: "Ofrecemos servicios de pintura general, pintamos paredes, techos, puertas, muebles y más. Nos enfocamos en la calidad, el diseño personalizado y la durabilidad, adaptándonos a las necesidades de cada cliente para crear espacios funcionales y estéticos.",
+    image: "https://www.pintoresmálaga.es/img/pintura.jpg",
   },
   {
-    title: "Mamparas de Aluminio",
-    slug: "mamparas-de-aluminio",
-    description: "Fabricamos y instalamos mamparas de aluminio, con acabados modernos y diseño personalizado. Adaptadas a tus necesidades, garantizando durabilidad y resistencia en cada proyecto.",
+    title: "Escaleras y Pasamanos",
+    slug: "escaleras-pasamanos",
+    description: "Instalamos pasamanos y escaleras de todo tipo: rectos, curvos, helicoidales, flotantes, interiores y exteriores, en materiales como acero, aluminio o madera. Ofrecemos soluciones modernas y seguras, adaptadas a tus necesidades y espacios, tanto para proyectos residenciales como comerciales.",
+    image: "https://aceroscrea.com/wp-content/uploads/2023/07/escaleras-modernas-de-herreria-con-escalones-de-lamina-antiderrapante-en-exterior-de-casa.jpg",
+  },
+  {
+    title: "Techos metálicos",
+    slug: "techos-metalicos",
+    description: "Fabricación de techos parabólicos. Trabajamos con materiales de alta calidad como Aluzinc, TR4, TR5, garantizando durabilidad y eficiencia.",
+    image: "https://images.unsplash.com/photo-1707226846619-b2a8bca33671?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    title: "Generales",
+    slug: "generales",
+    description: "Ofrecemos servicios de diseño de fachadas, muro cortina, baldosas y cielo raso, utilizando materiales de alta calidad y acabados profesionales. Nos adaptamos a las necesidades de cada proyecto para brindar soluciones modernas, funcionales y estéticas.",
+    image: "https://corpbps.com/wp-content/uploads/2022/12/Servicios-Generales.jpg",
+  },
+  {
+    title: "Mamparas",
+    slug: "mamparas",
+    description: "Fabricamos y instalamos mamparas, con acabados modernos y diseño personalizado. Adaptadas a tus necesidades, garantizando durabilidad y resistencia en cada proyecto.",
     image: "https://arqvidriosleal.com/wp-content/uploads/2018/10/Mampara-_aluminio1.jpg",
   },
 ];
@@ -73,7 +97,6 @@ const services = [
             </div>
           </div>
           <div class="flex flex-col flex-1 p-6">
-            <p class="text-gray-600 mb-6">{service.description}</p>
             <div class="mt-auto">
               <a href={`/servicios/${service.slug}`} class="contents">
                 <Button className="w-fit mt-2 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary">

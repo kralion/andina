@@ -26,7 +26,7 @@ const organizationLd = {
 	'@type': 'Organization',
 	name: siteName,
 	...(siteOrigin ? { url: siteOrigin } : {}),
-	...(siteOrigin ? { logo: new URL('/faviconAG.ico', Astro.site).toString() } : {}),
+	...(siteOrigin ? { logo: new URL('/faviconSVG.svg', Astro.site).toString() } : {}),
 	contactPoint: [
 		{
 			'@type': 'ContactPoint',
@@ -43,7 +43,7 @@ const organizationLd = {
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/faviconAG.ico" />
+		<link rel="icon" type="image/x-icon" href="/faviconSVG.svg" />
 		<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 		<link rel="manifest" href="/manifest.json" />
 		<title>{pageTitle}</title>

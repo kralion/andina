@@ -1,0 +1,80 @@
+---
+import Layout from "../../layouts/main.astro";
+const content = {
+  title: "Pintura General - Andina Group E.I.R.L.",
+  description:
+    "Ofrecemos servicios de pintura general, pintamos paredes, techos, puertas, muebles y más. Nos enfocamos en la calidad, el diseño personalizado y la durabilidad, adaptándonos a las necesidades de cada cliente para crear espacios funcionales y estéticos.",
+  image:
+    "https://images.unsplash.com/photo-1626081063434-79a2169791b1?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  jsonLd: {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Pintura General",
+    description:
+      "Ofrecemos servicios de pintura general, pintamos paredes, techos, puertas, muebles y más. Nos enfocamos en la calidad, el diseño personalizado y la durabilidad, adaptándonos a las necesidades de cada cliente para crear espacios funcionales y estéticos.",
+    areaServed: "Huancayo, Perú",
+    provider: { "@type": "Organization", name: "Andina Group E.I.R.L." },
+  },
+};
+---
+
+<Layout content={content}>
+  <!-- Hero Section -->
+  <div
+    class="relative w-full h-[40vh] md:h-[70vh] flex items-center justify-center overflow-hidden"
+  >
+    <img
+      src="https://www.pintoresmálaga.es/img/pintura.jpg"
+      alt="Pintura General"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="height: 70vh;"
+    />
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute left-0 md:left-60 bottom-10 z-10 p-8 md:p-12">
+      <h2
+        class="text-white text-5xl md:text-[80px] font-bold text-left drop-shadow-lg"
+        data-aos="fade-up"
+      >
+        Pintura General
+      </h2>
+    </div>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+    <div class="py-10 md:py-20">
+      <h2 class="text-2xl md:text-4xl font-extralight">
+        Descripción General
+      </h2>
+      <p class="text-base md:text-[20px] font-extralight py-4 md:py-5">
+        En Andina Group E.I.R.L. ofrecemos servicios de pintura general, pintamos paredes, techos, puertas, muebles y más. Nos enfocamos en la calidad, el diseño personalizado y la durabilidad, adaptándonos a las necesidades de cada cliente para crear espacios funcionales y estéticos.
+      </p>
+    </div>
+    <div>
+      <h2 class="text-2xl md:text-4xl font-extralight">
+        ¿Qué está incluido?
+      </h2>
+      <p class="text-base md:text-[20px] font-extralight py-4 md:py-5">
+        Este servicio de pintura general incluye:
+        <ul
+          class="list-disc pl-4 md:pl-6 text-base md:text-lg font-extralight text-gray-700 space-y-2"
+        >
+          <li>Pintura de paredes.</li>
+          <li>Pintura de techos.</li>
+          <li>Pintura de puertas.</li>
+          <li>Pintura de muebles.</li>
+          <li>Garantía de calidad en la pintura.</li>
+        </ul>
+      </p>
+    </div>
+    <div class="py-10 md:py-20">
+      <h2 class="text-2xl md:text-4xl font-extralight pb-6 md:pb-10">
+        Algunos de nuestros trabajos:
+      </h2>
+      <img
+        src="https://www.pintoresmálaga.es/img/pintura.jpg"
+        alt="Pintura General"
+        class="w-full max-w-full md:max-w-3xl mx-auto object-cover object-center rounded-xl"
+      />
+    </div>
+  </section>
+</Layout>
