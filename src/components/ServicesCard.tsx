@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import ServiceModal from "./ServiceModal";
@@ -81,7 +81,35 @@ const services: Service[] = [
 ];
 
 const ServicesCard: React.FC<ServicesCardProps> = ({ limit }) => {
-  const displayedServices = limit ? services.slice(0, limit) : services;
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 1024);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  const getServicesToShow = () => {
+    if (!limit) return services;
+    
+    if (isSmallScreen) {
+      return services.slice(0, Math.min(2, limit));
+    } else {
+      return services.slice(0, limit);
+    }
+  };
+
+  const truncateText = (text: string, maxLength: number) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + "...";
+  };
+
+  const displayedServices = getServicesToShow();
 
   return (
     <section className="bg-white max-w-7xl mx-auto">
@@ -106,7 +134,11 @@ const ServicesCard: React.FC<ServicesCardProps> = ({ limit }) => {
                 </div>
               </div>
               <div className="flex flex-col flex-1 p-6">
-                <p className="text-gray-500 text-sm">{service.description}</p>
+                <p className="text-gray-500 text-base">
+                  {isSmallScreen 
+                    ? truncateText(service.description, 80) 
+                    : service.description}
+                </p>
                 <div className="mt-auto">
                   <ServiceModal service={service}>
                     <Button className="w-fit mt-6 h-10 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary text-sm md:text-base md:px-6 md:py-2">

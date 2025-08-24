@@ -66,10 +66,10 @@ export default function ContactForm() {
               <SelectValue placeholder="¿Donde se encuentra?" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Huancayo">Junín</SelectItem>
-              <SelectItem value="Jauja">Lima</SelectItem>
-              <SelectItem value="Chupaca">Cusco</SelectItem>
-              <SelectItem value="Chupaca">Arequipa</SelectItem>
+              <SelectItem value="Junin">Junín</SelectItem>
+              <SelectItem value="Lima">Lima</SelectItem>
+              <SelectItem value="Cusco">Cusco</SelectItem>
+              <SelectItem value="Arequipa">Arequipa</SelectItem>
               <SelectItem value="Otro">Otro</SelectItem>
             </SelectContent>
           </Select>
