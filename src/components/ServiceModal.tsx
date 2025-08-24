@@ -27,12 +27,12 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, children }) => {
     const serviceDetails = {
       "estructuras-metalicas": {
         features: [
-          "Puertas y portones metálicos",
-          "Contraplacados",
-          "Estructuras en acero inoxidable",
-          "Rejas decorativas y de seguridad",
-          "Techos curvos",
-          "Instalación profesional"
+          "Techos metálicos",
+          "Puertas diseño inox, contraplacadas, pintura imitación madera",
+          "Portones corredizos",
+          "Pasamanos, escaleras",
+          "Pintura, instalación de chapas",
+          "Soldadura en general"
         ]
       },
       "puertas-y-portones": {
