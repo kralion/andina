@@ -123,3 +123,35 @@
 body {
   font-family: 'Figtree', sans-serif;
 }
+
+/* Custom scrollbar styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-primary\/20 {
+  scrollbar-color: oklch(0.577 0.245 27.325 / 0.2) transparent;
+}
+
+.scrollbar-track-gray-100 {
+  scrollbar-color: oklch(0.577 0.245 27.325 / 0.2) oklch(0.97 0 0);
+}
+
+/* Webkit scrollbar for better support */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: oklch(0.97 0 0);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: oklch(0.577 0.245 27.325 / 0.2);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.577 0.245 27.325 / 0.4);
+}
