@@ -19,7 +19,7 @@ const services: Service[] = [
     title: "Estructuras metálicas",
     slug: "estructuras-metalicas",
     description:
-      "Diseñamos y fabricamos estructuras metálicas, para todo tipo de proyectos, como: puertas, portones, metálicas, instalación de puertas metálicas, contraplacado, inox, portones, rejas, techos curvo, y más.",
+      "Diseñamos y fabricamos, puertas, portones, metálicas, instalación de puertas metálicas, contraplacado, inox, portones, rejas, techos curvo, y más.",
     image:
       "https://i.ibb.co/S7fQhSrG/andina10.jpg",
   },
