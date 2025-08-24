@@ -48,7 +48,7 @@ export default function ContactForm() {
           />
           <Select onValueChange={(value) => handleInputChange("servicio", value)}>
             <SelectTrigger className="rounded-md bg-white/90 text-black h-14">
-              <SelectValue placeholder="Seleccione el servicio que desea adquirir" />
+              <SelectValue placeholder="Seleccione un servicio" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="Estructuras metálicas">Estructuras metálicas</SelectItem>
