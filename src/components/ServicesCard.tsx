@@ -21,14 +21,14 @@ const services: Service[] = [
     description:
       "Diseñamos y fabricamos estructuras metálicas, para todo tipo de proyectos, como: puertas, portones, metálicas, instalación de puertas metálicas, contraplacado, inox, portones, rejas, techos curvo, y más.",
     image:
-      "https://images.unsplash.com/photo-1707226846619-b2a8bca33671?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://i.ibb.co/S7fQhSrG/andina10.jpg",
   },
   {
     title: "Puertas automáticas",
     slug: "puertas-y-portones",
     description:
       "Fabricamos e instalamos puertas y portones, para cocheras, tiendas, locales, oficinas, etc. Todas nuestras soluciones se adaptan a tus necesidades, garantizando seguridad, estética y resistencia en cada proyecto.",
-    image: "https://i.ibb.co/Kz3Y4bP1/puerta.jpg",
+    image: "https://i.ibb.co/S42MhMyJ/1.jpg",
   },
   {
     title: "Vidriería",
@@ -36,7 +36,7 @@ const services: Service[] = [
     description:
       "Ofrecemos servicios de vidriería, instalación de mamparas, puertas, aluminio, pasamanos, ventanas, sistema nova, estructurada, ducha en serie europea, ventana estructurada, sistema de mamparas, muro cortina, ventana en serie 38 25, vidrio curvo y templado, y mucho más.",
     image:
-      "https://cosmosglasssolution.com/Blog/wp-content/uploads/2018/11/vidrieria-elementos-mamparas-1024x464.jpg",
+      "https://i.ibb.co/nNY27WmK/andina4.jpg",
   },
   {
     title: "Drywall",
@@ -44,7 +44,7 @@ const services: Service[] = [
     description:
       "Ofrecemos soluciones de Drywall para divisiones, paredes y techos, con materiales de alta calidad y acabados profesionales, garantizando durabilidad y resistencia.",
     image:
-      "https://st2.depositphotos.com/1723345/10224/i/450/depositphotos_102243078-stock-photo-plasterboard-walls-gypsum-wall-under.jpg",
+      "https://i.ibb.co/FkQxndsv/andina.jpg",
   },
   {
     title: "Melamina",
@@ -86,7 +86,7 @@ const ServicesCard: React.FC<ServicesCardProps> = ({ limit }) => {
   return (
     <section className="bg-white max-w-7xl mx-auto">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8">
           {displayedServices.map((service) => (
             <div
               key={service.slug}
@@ -100,7 +100,7 @@ const ServicesCard: React.FC<ServicesCardProps> = ({ limit }) => {
                 />
                 <div className="absolute inset-x-0 bottom-0 h-60 bg-gradient-to-t from-white to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-3xl text-gray-700 drop-shadow-sm">
+                  <h3 className="text-xl md:text-3xl text-gray-700 drop-shadow-sm">
                     {service.title}
                   </h3>
                 </div>
@@ -109,8 +109,8 @@ const ServicesCard: React.FC<ServicesCardProps> = ({ limit }) => {
                 <p className="text-gray-500 text-sm">{service.description}</p>
                 <div className="mt-auto">
                   <ServiceModal service={service}>
-                    <Button className="w-fit mt-2 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary">
-                      Más información
+                    <Button className="w-fit mt-6 h-10 cursor-pointer hover:bg-white hover:text-primary border hover:border-primary text-sm md:text-base md:px-6 md:py-2">
+                      Ver más
                       <MoveRight className="w-4 h-4" />
                     </Button>
                   </ServiceModal>

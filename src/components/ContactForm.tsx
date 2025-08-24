@@ -9,7 +9,7 @@ import { openWhatsApp, type FormData } from "@/utils/whatsapp";
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     nombre: "",
-    telefono: "",
+    ubicacion: "",
     servicio: "",
     detalles: "",
   });
@@ -26,7 +26,7 @@ export default function ContactForm() {
     openWhatsApp(formData);
     setFormData({
       nombre: "",
-      telefono: "",
+      ubicacion: "",
       servicio: "",
       detalles: "",
     });
@@ -46,38 +46,44 @@ export default function ContactForm() {
             onChange={e => handleInputChange("nombre", e.target.value)}
             required
           />
-          <Input 
-            type="tel" 
-            className="rounded-md bg-white/90 text-black h-14" 
-            placeholder="Número de teléfono" 
-            value={formData.telefono}
-            onChange={e => handleInputChange("telefono", e.target.value)}
-            required
-          />
           <Select onValueChange={(value) => handleInputChange("servicio", value)}>
             <SelectTrigger className="rounded-md bg-white/90 text-black h-14">
               <SelectValue placeholder="Seleccione el servicio que desea adquirir" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Carpintería">Carpintería</SelectItem>
-              <SelectItem value="Cerrajería">Cerrajería</SelectItem>
-              <SelectItem value="Drywall">Drywall</SelectItem>
-              <SelectItem value="Pintura">Pintura</SelectItem>
+              <SelectItem value="Estructuras metálicas">Estructuras metálicas</SelectItem>
+              <SelectItem value="Puertas automáticas">Puertas automáticas</SelectItem>
               <SelectItem value="Vidriería">Vidriería</SelectItem>
+              <SelectItem value="Drywall">Drywall</SelectItem>
+              <SelectItem value="Melamina">Melamina</SelectItem>
+              <SelectItem value="Wallpanel">Wallpanel</SelectItem>
+              <SelectItem value="Carpintería">Carpintería</SelectItem>
+              <SelectItem value="Otro">Otro</SelectItem>
+            </SelectContent>
+          </Select>
+          <Select onValueChange={(value) => handleInputChange("ubicacion", value)}>
+            <SelectTrigger className="rounded-md bg-white/90 text-black h-14">
+              <SelectValue placeholder="¿Donde se encuentra?" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Huancayo">Junín</SelectItem>
+              <SelectItem value="Jauja">Lima</SelectItem>
+              <SelectItem value="Chupaca">Cusco</SelectItem>
+              <SelectItem value="Chupaca">Arequipa</SelectItem>
               <SelectItem value="Otro">Otro</SelectItem>
             </SelectContent>
           </Select>
           <Textarea 
             rows={4} 
             className="rounded-md bg-white/90 px-3 py-2 text-black h-28" 
-            placeholder="Detalles" 
+            placeholder="Mensaje" 
             value={formData.detalles}
             onChange={e => handleInputChange("detalles", e.target.value)}
           />
           <Button 
-            type="submit" 
-            className="mt-2 rounded-md bg-primary px-4 py-2 font-medium text-white hover:bg-white hover:text-primary cursor-pointer mx-auto"
-            disabled={!formData.nombre || !formData.telefono || !formData.servicio}
+            type="submit"
+            className="mt-2 rounded-md bg-primary px-4 py-2 font-medium text-white hover:bg-white hover:text-primary cursor-pointer mx-auto h-10 text-sm md:text-base md:px-6 md:py-2"
+            disabled={!formData.nombre || !formData.ubicacion || !formData.servicio}
           >
             Reserve una consulta gratuita
             <MoveRight className="w-4 h-4" />

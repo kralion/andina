@@ -1,6 +1,6 @@
 export interface FormData {
   nombre: string;
-  telefono: string;
+  ubicacion: string;
   servicio: string;
   detalles: string;
 }
@@ -9,7 +9,7 @@ export const formatWhatsAppMessagee = (formData: FormData) => {
   return `Hola! Me gustaría reservar una consulta gratuita.
   *Información de contacto:*
   • Nombre: ${formData.nombre}
-  • Teléfono: ${formData.telefono}
+  • Ubicación: ${formData.ubicacion}
   • Servicio de interés: ${formData.servicio}
   • Detalles: ${formData.detalles}
 

@@ -155,7 +155,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, children }) => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   onClick={handleWhatsAppContact}
-                  className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700"
+                  className="flex items-center justify-center gap-2 bg-primary hover:bg-white hover:text-primary hover:border-primary border cursor-pointer h-10 text-sm md:text-base md:px-6 md:py-2 transition-colors duration-200"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Consultar por WhatsApp
@@ -163,7 +163,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, children }) => {
                 <Button
                   onClick={handlePhoneCall}
                   variant="outline"
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center gap-2 cursor-pointer h-10 text-sm md:text-base md:px-6 md:py-2 transition-colors duration-200 hover:bg-primary/90 hover:text-white border-primary border hover:border-primary/80 text-primary"
                 >
                   <Phone className="w-4 h-4" />
                   Llamar ahora
