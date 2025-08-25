@@ -98,7 +98,7 @@ const ServicesCard: React.FC<ServicesCardProps> = ({ limit }) => {
     if (!limit) return services;
     
     if (isSmallScreen) {
-      return services.slice(0, Math.min(2, limit));
+      return services.slice(0, Math.min(4, limit));
     } else {
       return services.slice(0, limit);
     }
