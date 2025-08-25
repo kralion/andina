@@ -40,14 +40,14 @@ export default function ContactForm() {
         </h2>
         <form className="grid gap-3" onSubmit={handleSubmit}>
           <Input 
-            className="rounded-md bg-white/90 text-black h-14" 
+            className="rounded-md bg-white/90 text-black" 
             placeholder="Nombre completo" 
             value={formData.nombre}
             onChange={e => handleInputChange("nombre", e.target.value)}
             required
           />
           <Select onValueChange={(value) => handleInputChange("servicio", value)}>
-            <SelectTrigger className="rounded-md bg-white/90 text-black h-14">
+            <SelectTrigger className="rounded-md bg-white/90 text-black w-full">
               <SelectValue placeholder="Seleccione un servicio" />
             </SelectTrigger>
             <SelectContent>
@@ -62,7 +62,7 @@ export default function ContactForm() {
             </SelectContent>
           </Select>
           <Select onValueChange={(value) => handleInputChange("ubicacion", value)}>
-            <SelectTrigger className="rounded-md bg-white/90 text-black h-14">
+            <SelectTrigger className="rounded-md bg-white/90 text-black w-full">
               <SelectValue placeholder="¿Donde se encuentra?" />
             </SelectTrigger>
             <SelectContent>
