@@ -133,8 +133,8 @@ const ServicesCard: React.FC<ServicesCardProps> = ({ limit }) => {
                   </h3>
                 </div>
               </div>
-              <div className="flex flex-col flex-1 p-6">
-                <p className="text-gray-500 text-base">
+              <div className="flex flex-col flex-1 md:p-6 p-3">
+                <p className="text-gray-500 md:text-base text-xs">
                   {isSmallScreen 
                     ? truncateText(service.description, 80) 
                     : service.description}
